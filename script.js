@@ -43,3 +43,46 @@ function updateTime() {
     lastUpdated.textContent = now.toLocaleTimeString();
 
 }
+// =============================
+// YouTube
+// =============================
+
+async function loadYouTube() {
+
+    try {
+
+        const response = await fetch(
+            `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${CONFIG.YOUTUBE_CHANNEL_ID}&key=${CONFIG.YOUTUBE_API_KEY}`
+        );
+
+        const data = await response.json();
+
+        if (!data.items || data.items.length === 0) {
+
+            ytSubs.textContent = "Invalid";
+            ytViews.textContent = "Invalid";
+            ytVideos.textContent = "Invalid";
+
+            return;
+
+        }
+
+        const stats = data.items[0].statistics;
+
+        ytSubs.textContent = formatNumber(stats.subscriberCount);
+        ytViews.textContent = formatNumber(stats.viewCount);
+        ytVideos.textContent = formatNumber(stats.videoCount);
+
+    }
+
+    catch (error) {
+
+        console.error(error);
+
+        ytSubs.textContent = "Error";
+        ytViews.textContent = "Error";
+        ytVideos.textContent = "Error";
+
+    }
+
+}
