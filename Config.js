@@ -1,1 +1,11 @@
+const CONFIG = {
 
+    ROBLOX_USERNAME: "GiraffeEMan34",
+
+    YOUTUBE_API_KEY: "AIzaSyBPUJTSsvAHceWTvRJEmMRgKFPRdtObqt4",
+
+    YOUTUBE_CHANNEL_ID: "UCvMESHoZJUj13uQwr1zZ9xw",
+
+    AUTO_REFRESH: 60000
+
+};
