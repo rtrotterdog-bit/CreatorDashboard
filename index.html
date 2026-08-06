@@ -5,42 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Creator Dashboard</title>
 
+    <meta name="theme-color" content="#111827">
+
+    <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="style.css">
 
     <script src="config.js"></script>
 </head>
-
 <body>
 
 <header>
     <h1>🎮 Creator Dashboard</h1>
-    <p>Live Roblox • YouTube • Twitch Stats</p>
+    <p>Roblox & YouTube Live Stats</p>
 </header>
 
 <main>
 
-<div class="grid">
+<div class="dashboard">
 
-    <!-- ROBLOX -->
-
+    <!-- Roblox Card -->
     <section class="card">
 
-        <h2>Roblox</h2>
+        <h2>🎮 Roblox</h2>
 
-        <img id="rbxAvatar"
-        src=""
-        class="avatar">
+        <img
+            id="rbxAvatar"
+            class="avatar"
+            src=""
+            alt="Avatar">
 
         <h3 id="rbxName">Loading...</h3>
 
         <div class="stat">
-            <span>Followers</span>
-            <strong id="rbxFollowers">--</strong>
-        </div>
-
-        <div class="stat">
-            <span>Friends</span>
-            <strong id="rbxFriends">--</strong>
+            <span>Username</span>
+            <strong id="rbxUsername">Loading...</strong>
         </div>
 
         <div class="stat">
@@ -50,11 +48,10 @@
 
     </section>
 
-    <!-- YOUTUBE -->
-
+    <!-- YouTube Card -->
     <section class="card">
 
-        <h2>YouTube</h2>
+        <h2>📺 YouTube</h2>
 
         <div class="stat">
             <span>Subscribers</span>
@@ -73,48 +70,39 @@
 
     </section>
 
-    <!-- TWITCH -->
-
+    <!-- Dashboard -->
     <section class="card">
 
-        <h2>Twitch</h2>
+        <h2>⚙ Dashboard</h2>
 
         <div class="stat">
-            <span>Followers</span>
-            <strong id="twFollowers">--</strong>
+            <span>Last Updated</span>
+            <strong id="lastUpdated">Never</strong>
         </div>
 
-        <div class="stat">
-            <span>Status</span>
-            <strong id="twStatus">Loading...</strong>
-        </div>
-
-        <div class="stat">
-            <span>Viewer Count</span>
-            <strong id="twViewers">--</strong>
-        </div>
+        <button onclick="refreshDashboard()">
+            Refresh
+        </button>
 
     </section>
 
 </div>
 
-<section class="footerCard">
-
-<h2>Dashboard</h2>
-
-<p id="lastUpdated">
-Never Updated
-</p>
-
-<button onclick="refreshDashboard()">
-Refresh
-</button>
-
-</section>
-
 </main>
 
+<footer>
+    Creator Dashboard
+</footer>
+
 <script src="script.js"></script>
+
+<script>
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+        navigator.serviceWorker.register("sw.js");
+    });
+}
+</script>
 
 </body>
 </html>
