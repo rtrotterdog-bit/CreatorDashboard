@@ -1,1 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creator Dashboard</title>
 
+    <link rel="stylesheet" href="style.css">
+
+    <script src="config.js"></script>
+</head>
+
+<body>
+
+<header>
+    <h1>🎮 Creator Dashboard</h1>
+    <p>Live Roblox • YouTube • Twitch Stats</p>
+</header>
+
+<main>
+
+<div class="grid">
+
+    <!-- ROBLOX -->
+
+    <section class="card">
+
+        <h2>Roblox</h2>
+
+        <img id="rbxAvatar"
+        src=""
+        class="avatar">
+
+        <h3 id="rbxName">Loading...</h3>
+
+        <div class="stat">
+            <span>Followers</span>
+            <strong id="rbxFollowers">--</strong>
+        </div>
+
+        <div class="stat">
+            <span>Friends</span>
+            <strong id="rbxFriends">--</strong>
+        </div>
+
+        <div class="stat">
+            <span>User ID</span>
+            <strong id="rbxID">--</strong>
+        </div>
+
+    </section>
+
+    <!-- YOUTUBE -->
+
+    <section class="card">
+
+        <h2>YouTube</h2>
+
+        <div class="stat">
+            <span>Subscribers</span>
+            <strong id="ytSubs">--</strong>
+        </div>
+
+        <div class="stat">
+            <span>Views</span>
+            <strong id="ytViews">--</strong>
+        </div>
+
+        <div class="stat">
+            <span>Videos</span>
+            <strong id="ytVideos">--</strong>
+        </div>
+
+    </section>
+
+    <!-- TWITCH -->
+
+    <section class="card">
+
+        <h2>Twitch</h2>
+
+        <div class="stat">
+            <span>Followers</span>
+            <strong id="twFollowers">--</strong>
+        </div>
+
+        <div class="stat">
+            <span>Status</span>
+            <strong id="twStatus">Loading...</strong>
+        </div>
+
+        <div class="stat">
+            <span>Viewer Count</span>
+            <strong id="twViewers">--</strong>
+        </div>
+
+    </section>
+
+</div>
+
+<section class="footerCard">
+
+<h2>Dashboard</h2>
+
+<p id="lastUpdated">
+Never Updated
+</p>
+
+<button onclick="refreshDashboard()">
+Refresh
+</button>
+
+</section>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>
